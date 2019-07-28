@@ -18,6 +18,7 @@
 		3308426822ED5C7700D62FFD /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308426722ED5C7700D62FFD /* BuyViewController.swift */; };
 		3308426A22ED5C8800D62FFD /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308426922ED5C8800D62FFD /* CreateAccountViewController.swift */; };
 		3308426D22ED64C800D62FFD /* BuyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3308426C22ED64C800D62FFD /* BuyCoordinator.swift */; };
+		3308426F22ED69E000D62FFD /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 3308426E22ED69E000D62FFD /* readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		3308426722ED5C7700D62FFD /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
 		3308426922ED5C8800D62FFD /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		3308426C22ED64C800D62FFD /* BuyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCoordinator.swift; sourceTree = "<group>"; };
+		3308426E22ED69E000D62FFD /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 		3308424222ED572000D62FFD = {
 			isa = PBXGroup;
 			children = (
+				3308426E22ED69E000D62FFD /* readme.md */,
 				3308424D22ED572000D62FFD /* CoordinatorLearning */,
 				3308424C22ED572000D62FFD /* Products */,
 			);
@@ -158,6 +161,7 @@
 			files = (
 				3308425922ED572200D62FFD /* LaunchScreen.storyboard in Resources */,
 				3308425622ED572200D62FFD /* Assets.xcassets in Resources */,
+				3308426F22ED69E000D62FFD /* readme.md in Resources */,
 				3308425422ED572000D62FFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
