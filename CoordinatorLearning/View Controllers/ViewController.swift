@@ -17,9 +17,11 @@ class ViewController: UIViewController, Storyboarded {
 	}
 
 	@IBAction func buyButtonPressed(_ sender: Any) {
+		coordinator?.buySubscription()
 	}
 	
 	@IBAction func createAccountButtonPressed(_ sender: Any) {
+		coordinator?.createAccount()
 	}
 }
 
