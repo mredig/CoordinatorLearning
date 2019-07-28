@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainCoordinator: Coordinator {
+class MainCoordinator: NSObject, Coordinator {
 	var childCoordinators = [Coordinator]()
 	var navigationController: UINavigationController
 
@@ -19,6 +19,7 @@ class MainCoordinator: Coordinator {
 	func start() {
 		let vc = ViewController.instantiate()
 		vc.coordinator = self
+		navigationController.delegate = self
 		navigationController.pushViewController(vc, animated: false)
 	}
 
@@ -41,6 +42,24 @@ class MainCoordinator: Coordinator {
 				childCoordinators.remove(at: index)
 				break
 			}
+		}
+	}
+}
+
+extension MainCoordinator: UINavigationControllerDelegate {
+	func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+		// read vc we're moving from
+		guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else { return }
+
+		// check if our vc array already contains the fromViewController
+		if navigationController.viewControllers.contains(fromViewController) {
+			return
+		}
+
+		// we're still here - it means we're popping the view controller. check if it's a buyVC
+		if let buyViewController = fromViewController as? BuyViewController {
+			// we're popping a buy vc, end its coordinator
+			childDidFinish(buyViewController.coordinator)
 		}
 	}
 }
