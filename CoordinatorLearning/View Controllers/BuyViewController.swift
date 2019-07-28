@@ -10,4 +10,11 @@ import UIKit
 
 class BuyViewController: UIViewController, Storyboarded {
 	weak var coordinator: MainCoordinator?
+	var selectedProduct = 0
+	@IBOutlet var buyLabel: UILabel!
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		buyLabel.text = "Buy item \(selectedProduct + 1)"
+	}
 }

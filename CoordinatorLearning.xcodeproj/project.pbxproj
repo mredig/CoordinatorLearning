@@ -32,6 +32,7 @@
 		3308426522ED5B4600D62FFD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		3308426722ED5C7700D62FFD /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
 		3308426922ED5C8800D62FFD /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		3308427022ED6A7200D62FFD /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +49,7 @@
 		3308424222ED572000D62FFD = {
 			isa = PBXGroup;
 			children = (
+				3308427022ED6A7200D62FFD /* readme.md */,
 				3308424D22ED572000D62FFD /* CoordinatorLearning */,
 				3308424C22ED572000D62FFD /* Products */,
 			);

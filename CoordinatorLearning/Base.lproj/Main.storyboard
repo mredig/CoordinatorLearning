@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,18 +19,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bYW-bU-D8x">
-                                <rect key="frame" x="153.5" y="418" width="107" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bYW-bU-D8x">
+                                <rect key="frame" x="146.5" y="396" width="121" height="104"/>
                                 <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yjv-G0-EpS">
+                                        <rect key="frame" x="0.0" y="0.0" width="121" height="29"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                    </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeh-Ys-mLZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="107" height="30"/>
+                                        <rect key="frame" x="0.0" y="36" width="121" height="30"/>
                                         <state key="normal" title="Buy"/>
                                         <connections>
                                             <action selector="buyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UFr-ks-vM6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFl-yx-uNc">
-                                        <rect key="frame" x="0.0" y="30" width="107" height="30"/>
+                                        <rect key="frame" x="0.0" y="74" width="121" height="30"/>
                                         <state key="normal" title="Create Account"/>
                                         <connections>
                                             <action selector="createAccountButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GBb-5K-dFp"/>
@@ -45,9 +53,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="productSelected" destination="yjv-G0-EpS" id="EoH-VK-D5I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="77" y="19"/>
         </scene>
         <!--Buy View Controller-->
         <scene sceneID="SMn-rV-Wrj">
@@ -57,20 +69,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PO-Gp-Ouk">
-                                <rect key="frame" x="192" y="437.5" width="30" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zzz-ng-bWd">
+                                <rect key="frame" x="192.5" y="438" width="29.5" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PO-Gp-Ouk">
+                                        <rect key="frame" x="0.0" y="0.0" width="29.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0PO-Gp-Ouk" firstAttribute="centerY" secondItem="fbF-a0-tph" secondAttribute="centerY" id="1ql-59-WWl"/>
-                            <constraint firstItem="0PO-Gp-Ouk" firstAttribute="centerX" secondItem="fbF-a0-tph" secondAttribute="centerX" id="eKZ-rb-JgL"/>
+                            <constraint firstItem="zzz-ng-bWd" firstAttribute="centerX" secondItem="fbF-a0-tph" secondAttribute="centerX" id="7fP-4b-ycM"/>
+                            <constraint firstItem="zzz-ng-bWd" firstAttribute="centerY" secondItem="fbF-a0-tph" secondAttribute="centerY" id="wqS-5M-BWi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ry3-Vk-U3t"/>
                     </view>
+                    <connections>
+                        <outlet property="buyLabel" destination="0PO-Gp-Ouk" id="ZI7-Ns-Q4v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBV-eA-md5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
